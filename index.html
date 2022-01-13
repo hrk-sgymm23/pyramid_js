@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid</title>
+</head>
+<body>
+    <h1>ピラミッド生成機</h1>
+    <label>作りたいピラミッドの段数を入力してください</label><br>
+    <input type="number" id="pyramid" maxlength="3" placeholder="数字を入力"><br>
+    <input type="submit" onclick="create()" value="生成"> 
+</body>
+<script>
+    const create = () => {
+        var pyr = document.getElementById("pyramid");
+        var crp = pyr.value;
+        
+        for(i = 0; i <= crp; i++){
+            const array = [];
+            for(j = 1; j <= crp - i; j++) {
+                array.push(" ");
+            }
+            for(j = 1; j <= 2*i-1; j++) {
+                array.push("*");
+            }
+            const result = array.join("");
+            console.log(result);
+        }
+    }
+</script>
+</html>
